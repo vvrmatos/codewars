@@ -1,3 +1,4 @@
+;;;; RETIRED
 ;;;; 2 ^ n - 1
 
 (defpackage #:challenge/solution

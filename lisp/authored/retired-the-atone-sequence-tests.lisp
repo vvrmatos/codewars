@@ -1,3 +1,5 @@
+;;;; RETIRED
+
 (defpackage #:challenge/tests/solution
   (:use #:cl
         #:rove
