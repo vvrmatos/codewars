@@ -1,0 +1,3 @@
+def difference_in_ages(ages):
+    return [min(ages), max(ages), abs(min(ages) - max(ages)]
+
