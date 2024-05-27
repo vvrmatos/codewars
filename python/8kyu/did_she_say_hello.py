@@ -9,9 +9,9 @@ def validate_hello(unknown):
         'hallo': 'german',
         'hola': 'spanish',
         'ahoj': 'czech republic',
-        'czesc': 'polish'
+        'czesc': 'polish',
     }
-    breakpoint()    
+    breakpoint()
     for salutation in greetings:
         if salutation in unknown.lower():
             return True
