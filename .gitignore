@@ -194,3 +194,4 @@ lisp/.vscode/launch.json
 # Pycharm
 /.idea
 .idea
+.DS_Store
