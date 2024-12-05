@@ -17,7 +17,7 @@ class TestIsUppercase(unittest.TestCase):
         self.assertTrue(is_uppercase("12345 !@#$%"))
 
     def test_empty_string(self):
-        self.assertFalse(is_uppercase(""))
+        self.assertTrue(is_uppercase(""))
 
     def test_single_space_string(self):
         self.assertTrue(is_uppercase(" "))
