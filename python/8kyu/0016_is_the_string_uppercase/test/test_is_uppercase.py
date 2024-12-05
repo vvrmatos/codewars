@@ -1,5 +1,5 @@
 import unittest
-from app.main import is_uppercase
+from app.solution_1 import is_uppercase
 
 
 class TestIsUppercase(unittest.TestCase):
