@@ -13,11 +13,9 @@ from solution_1 import window
 class TestSlidingWindows(unittest.TestCase):
     
     def setUp(self):
-        """Set up random seed for reproducible tests"""
         random.seed(42)
     
     def test_basic_examples(self):
-        """Test basic examples from problem description"""
         # Arrange
         # Act & Assert
         self.assertEqual(window(2, 1, [0, 1, 2, 3, 4]), [[0, 1], [1, 2], [2, 3], [3, 4]])
@@ -25,7 +23,6 @@ class TestSlidingWindows(unittest.TestCase):
         self.assertEqual(window(2, 3, [0, 1, 2, 3, 4]), [[0, 1], [3, 4]])
     
     def test_zero_length_windows(self):
-        """Test windows with length 0"""
         # Arrange
         test_cases = [
             ([], 1),
@@ -50,7 +47,6 @@ class TestSlidingWindows(unittest.TestCase):
                 self.assertEqual(window(0, offset, lst), expected)
     
     def test_single_element_windows(self):
-        """Test windows with length 1"""
         # Arrange
         test_cases = [
             ([1], 1, [[1]]),
@@ -69,7 +65,6 @@ class TestSlidingWindows(unittest.TestCase):
                 self.assertEqual(window(1, offset, lst), expected)
     
     def test_length_2_windows(self):
-        """Test windows with length 2"""
         # Arrange
         test_cases = [
             ([1, 2], 1, [[1, 2]]),
@@ -87,7 +82,6 @@ class TestSlidingWindows(unittest.TestCase):
                 self.assertEqual(window(2, offset, lst), expected)
     
     def test_length_3_windows(self):
-        """Test windows with length 3"""
         # Arrange
         test_cases = [
             ([1, 2, 3], 1, [[1, 2, 3]]),
@@ -104,7 +98,6 @@ class TestSlidingWindows(unittest.TestCase):
                 self.assertEqual(window(3, offset, lst), expected)
     
     def test_empty_lists(self):
-        """Test with empty input lists"""
         # Arrange
         test_cases = [
             (0, 1, []),
@@ -128,7 +121,6 @@ class TestSlidingWindows(unittest.TestCase):
             self.assertEqual(window(length, 1, []), [])
     
     def test_single_element_lists(self):
-        """Test with single element lists"""
         # Arrange
         test_cases = [
             (0, 1, [5]),
@@ -148,7 +140,6 @@ class TestSlidingWindows(unittest.TestCase):
         self.assertEqual(window(2, 1, [5]), [])
     
     def test_large_offsets(self):
-        """Test with offsets larger than the list"""
         # Arrange
         test_cases = [
             (0, 10, [1, 2, 3]),
@@ -169,7 +160,6 @@ class TestSlidingWindows(unittest.TestCase):
         self.assertEqual(window(3, 10, [1, 2, 3]), [[1, 2, 3]])
     
     def test_length_larger_than_list(self):
-        """Test when window length is larger than the list"""
         # Arrange
         test_cases = [
             (5, 1, [1, 2, 3]),
@@ -184,7 +174,6 @@ class TestSlidingWindows(unittest.TestCase):
                 self.assertEqual(window(length, offset, lst), [])
     
     def test_string_lists(self):
-        """Test with string elements"""
         # Arrange
         test_cases = [
             (0, 1, ['a', 'b', 'c']),
@@ -206,7 +195,6 @@ class TestSlidingWindows(unittest.TestCase):
         self.assertEqual(window(2, 2, ['a', 'b', 'c', 'd']), [['a', 'b'], ['c', 'd']])
     
     def test_mixed_type_lists(self):
-        """Test with mixed type elements"""
         # Arrange
         test_cases = [
             (0, 1, [1, 'a', 2.5]),
@@ -226,7 +214,6 @@ class TestSlidingWindows(unittest.TestCase):
         self.assertEqual(window(3, 1, [1, 'a', 2.5]), [[1, 'a', 2.5]])
     
     def test_negative_numbers(self):
-        """Test with negative numbers"""
         # Arrange
         test_cases = [
             (0, 1, [-1, -2, -3]),
@@ -248,7 +235,6 @@ class TestSlidingWindows(unittest.TestCase):
         self.assertEqual(window(2, 2, [-1, -2, -3, -4]), [[-1, -2], [-3, -4]])
     
     def test_floating_point_numbers(self):
-        """Test with floating point numbers"""
         # Arrange
         test_cases = [
             (0, 1, [1.5, 2.7, 3.1]),
@@ -268,7 +254,6 @@ class TestSlidingWindows(unittest.TestCase):
         self.assertEqual(window(3, 1, [1.5, 2.7, 3.1]), [[1.5, 2.7, 3.1]])
     
     def test_nested_lists(self):
-        """Test with nested lists as elements"""
         # Arrange
         test_cases = [
             (0, 1, [[1], [2], [3]]),
@@ -288,7 +273,6 @@ class TestSlidingWindows(unittest.TestCase):
         self.assertEqual(window(3, 1, [[1], [2], [3]]), [[[1], [2], [3]]])
     
     def test_boolean_values(self):
-        """Test with boolean values"""
         # Arrange
         test_cases = [
             (0, 1, [True, False, True]),
@@ -308,7 +292,6 @@ class TestSlidingWindows(unittest.TestCase):
         self.assertEqual(window(3, 1, [True, False, True]), [[True, False, True]])
     
     def test_none_values(self):
-        """Test with None values"""
         # Arrange
         test_cases = [
             (0, 1, [None, None, None]),
@@ -328,7 +311,6 @@ class TestSlidingWindows(unittest.TestCase):
         self.assertEqual(window(3, 1, [None, None, None]), [[None, None, None]])
     
     def test_random_small_lists(self):
-        """Test with random small lists"""
         for _ in range(100):
             # Arrange
             lst_length = random.randint(0, 10)
@@ -348,7 +330,6 @@ class TestSlidingWindows(unittest.TestCase):
                     self.assertEqual(result, expected)
     
     def test_random_medium_lists(self):
-        """Test with random medium lists"""
         for _ in range(100):
             # Arrange
             lst_length = random.randint(10, 50)
@@ -368,7 +349,6 @@ class TestSlidingWindows(unittest.TestCase):
                     self.assertEqual(result, expected)
     
     def test_random_large_lists(self):
-        """Test with random large lists"""
         for _ in range(100):
             # Arrange
             lst_length = random.randint(50, 200)
@@ -388,7 +368,6 @@ class TestSlidingWindows(unittest.TestCase):
                     self.assertEqual(result, expected)
     
     def test_edge_case_combinations(self):
-        """Test various edge case combinations"""
         # Arrange
         edge_cases = [([1, 2, 3], 1000), ([1, 2, 3], 2), ([1, 2, 3, 4, 5, 6], 3)]
         
@@ -409,7 +388,6 @@ class TestSlidingWindows(unittest.TestCase):
         self.assertEqual(window(3, 3, [1, 2, 3, 4, 5, 6]), [[1, 2, 3], [4, 5, 6]])
     
     def test_known_correct_results(self):
-        """Test with manually calculated correct results"""
         # Arrange
         known_results = [
             (0, 1, [1, 2, 3]),
@@ -438,7 +416,6 @@ class TestSlidingWindows(unittest.TestCase):
         self.assertEqual(window(3, 3, [1, 2, 3, 4, 5, 6]), [[1, 2, 3], [4, 5, 6]])
     
     def test_basic_validation_tests(self):
-        """Basic validation tests to verify invariants"""
         for _ in range(100):
             # Arrange
             lst_length = random.randint(0, 20)
