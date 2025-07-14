@@ -20,5 +20,5 @@ def window(length: int, offset: int, lst: list) -> list:
             new_length += offset
     return new_list
 
-r = window(2, 1, [0, 1, 2, 3])
+r = window(3, 1, [0, 1, 2, 3])
 print(r)
